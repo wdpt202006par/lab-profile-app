@@ -11,6 +11,12 @@ const path = require('path');
 const cors = require('cors');
 
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+module.exports = (req, res, next) => {
+  res.locals.user = req.session.currentUser;
+  next();
+};
 
 mongoose
   .connect('mongodb://localhost/lab-profile-app', { useNewUrlParser: true })
@@ -32,14 +38,18 @@ const app = express();
 
 app.use(
   session({
-    secret: 'some secret goes here',
-    resave: true,
+    secret: 'maPhraseSecrete',
+    resave: false,
     saveUninitialized: true,
+    cookie: { maxAge: 6000000 }, // en commentaire car pas de durer limite
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 60 * 60 * 24,
+    }),
   })
 );
 
 // ADD CORS SETTINGS HERE TO ALLOW CROSS-ORIGIN INTERACTION:
-const cors = require('cors');
 app.use(
   cors({
     credentials: true,
