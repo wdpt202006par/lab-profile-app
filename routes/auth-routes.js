@@ -38,13 +38,12 @@ authRoutes.post('/signup', (req, res, next) => {
         password: hashPass,
         campus: campus,
         course: course
-        
-
       });
-    console.log(aNewUser)
+
+
       aNewUser.save()
         .then(() => {
-          console.log("hello")
+         
           // Persist our new user into session
           req.session.currentUser = aNewUser
 
