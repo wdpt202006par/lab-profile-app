@@ -5,7 +5,7 @@ const userSchema = new Schema({
   username: {type: String},
   password:  {type: String},
   campus: {type: String, enum:["Madrid","Barcelone","Miami","Paris","Berlin","Amsterdam","Mexico","Sao Paulo","Lisbon" ]},
-  course:{type: String,enum:["Web Dev ","UX UI","Data Analytics",]},
+  course:{type: String,enum:["Web Dev","UX UI","Data Analytics",]},
   image:{type: String}
 }, 
 {

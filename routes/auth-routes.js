@@ -10,6 +10,8 @@ const User       = require('../models/User.model');
 authRoutes.post('/signup', (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  const campus = req.body.campus;
+  const course = req.body.course;
   
   if (!username || !password) {
     res.status(400).json({ message: 'Provide username and password' });
@@ -33,17 +35,23 @@ authRoutes.post('/signup', (req, res, next) => {
     
       const aNewUser = new User({
         username:username,
-        password: hashPass
+        password: hashPass,
+        campus: campus,
+        course: course
+        
+
       });
-    
+    console.log(aNewUser)
       aNewUser.save()
         .then(() => {
+          console.log("hello")
           // Persist our new user into session
           req.session.currentUser = aNewUser
 
          res.status(200).json(aNewUser);
         })
         .catch(err => {
+          console.log(err)
           res.status(400).json({ message: 'Saving user to database went wrong.' });
         })
       ;
@@ -55,11 +63,11 @@ authRoutes.post('/signup', (req, res, next) => {
 });
 
 authRoutes.post('/login', (req, res, next) => {
-  const {email, password} = req.body
+  const {username, password} = req.body
 
-  User.findOne({email}).then(user => {
+  User.findOne({username}).then(user => {
     if (!user) {
-      return next(new Error('No user with that email'))
+      return next(new Error('No user with that username'))
     }
     
     // compareSync

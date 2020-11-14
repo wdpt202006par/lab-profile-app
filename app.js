@@ -9,6 +9,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+const session       = require('express-session');
 
 mongoose
   .connect('mongodb://localhost/lab-profile-app', {useNewUrlParser: true})
@@ -30,6 +31,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// ADD SESSION SETTINGS HERE:
+app.use(session({
+  secret:"some secret goes here",
+  resave: true,
+  saveUninitialized: true
+}));
 
 // Express View engine setup
 
@@ -60,6 +67,7 @@ app.use(cors({
 const index = require('./routes/index');
 app.use('/', index);
 app.use('/api', require('./routes/auth-routes'));
+
 
 // Middleware error
 app.use((err, req, res, next) => {
