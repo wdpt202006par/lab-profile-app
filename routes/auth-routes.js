@@ -91,13 +91,14 @@ authRoutes.get('/loggedin', (req, res, next) => {
 
 authRoutes.post("/edit", (req, res, next) => {
   const { username, campus, course } = req.body;
-  const { id } = req.session.currentUser._id;
-  if (!req.user) {
+  const id = req.session.currentUser._id
+  
+  if (!req.session.currentUser) {
     res.status(401).json({message: "You need to be logged in!"});
     return;
   }
 
-  User.findOneAndUpdate(id, { username, campus, course }, {new: true})
+  User.findByIdAndUpdate(id, { username, campus, course })
   .then(user => {
     res.status(200).json(user);
 
