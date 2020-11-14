@@ -33,11 +33,15 @@ authRoutes.post('/signup', (req, res, next) => {
     
       const aNewUser = new User({
         username:username,
-        password: hashPass
+        password: hashPass,
+        campus:"Paris",
+        course:"Web dev",
+        image:"image1"
       });
-    
+    console.log(aNewUser)
       aNewUser.save()
         .then(() => {
+          console.log("hello")
           // Persist our new user into session
           req.session.currentUser = aNewUser
 
@@ -55,11 +59,11 @@ authRoutes.post('/signup', (req, res, next) => {
 });
 
 authRoutes.post('/login', (req, res, next) => {
-  const {email, password} = req.body
+  const {username, password} = req.body
 
-  User.findOne({email}).then(user => {
+  User.findOne({username}).then(user => {
     if (!user) {
-      return next(new Error('No user with that email'))
+      return next(new Error('No user with that username'))
     }
     
     // compareSync
