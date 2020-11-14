@@ -77,18 +77,22 @@ router.post('/signup', (req, res, next) => {
 
 router.post('/edit', (req, res, next) => {
   const { username, campus, course } = req.body;
-
+  
   res.send('User updated')
 });
 
 router.post('/logout', (req, res, next) => {
   req.session.destroy()
-  // res.json({message: 'Your are now logged out.'})
-  res.send('OK')
+  res.json({message: 'Your are now logged out.'})
 });
 
-router.post('/loggedin', (req, res, next) => {
-  res.send('User logged')
- });
+router.get('/loggedin', (req, res, next) => {
+  // req.isAuthenticated() is defined by passport
+  if (req.session.currentUser) {
+      res.status(200).json(req.session.currentUser);
+      return;
+  }
+  res.status(403).json({ message: 'Unauthorized' });
+});
 
 module.exports = router;

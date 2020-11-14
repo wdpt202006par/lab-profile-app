@@ -13,8 +13,9 @@ const userSchema = new Schema(
       type: String,
       enum: ['Web-Dev', 'UX/UI', 'Data Analytics']
     },
-    image: String
-  }
+    image: String,
+    owner: {type: Schema.Types.ObjectId, ref: 'User'} 
+  },
 )
 
 const User = mongoose.model('User', userSchema);
