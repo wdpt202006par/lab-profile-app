@@ -71,7 +71,8 @@ authRoutes.post('/login', (req, res, next) => {
       return next(new Error('Wrong credentials'));
     } else {
       req.session.currentUser = user;
-      res.json(user);
+      // res.json(user);
+      res.redirect('/profile');
     }
   }).catch(next);
 });
