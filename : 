@@ -1,0 +1,97 @@
+[33mcommit aa92989ea88d17d2ea343b4bdaaae44168a16457[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: marinetomazi <m.tomazi@hotmail.fr>
+Date:   Sat Nov 14 10:39:19 2020 +0100
+
+    iteration 1 done
+
+[33mcommit 2be893d52b2d20081ce54762b19df850a285b1f0[m
+Author: marinetomazi <m.tomazi@hotmail.fr>
+Date:   Thu Nov 12 21:31:31 2020 +0100
+
+    iteration 1 on going
+
+[33mcommit 9abe9c5b3ee80b6cb7a3694eab606568482d4915[m
+Author: sandrabosk <sandraboskovic@hotmail.com>
+Date:   Thu May 7 17:22:15 2020 -0400
+
+    update readme, add stale bit, add basic prettier
+
+[33mcommit 16c8f89f1d462bc3ee90df7775ba51a59be1a59a[m
+Merge: f4d9eaa dd5b0d4
+Author: Aleksandra Boskovic <sandraboskovic@hotmail.com>
+Date:   Thu Oct 3 22:22:14 2019 -0400
+
+    Merge pull request #105 from ironhack-labs/josecarneiro-patch-1
+    
+    Added Lisbon to the list of campuses
+
+[33mcommit f4d9eaa2e0ed517f86aaf7d278db1bcde1a2f0da[m
+Merge: d628fff dcce612
+Author: Aleksandra Boskovic <sandraboskovic@hotmail.com>
+Date:   Thu Oct 3 22:20:40 2019 -0400
+
+    Merge pull request #106 from ironhack-labs/josecarneiro-patch-2
+    
+    Changed logout call method to POST instead of GET
+
+[33mcommit d628fffbd91e923876d74c4b9e7f1326ff27468f[m
+Author: José Carneiro <josemcarneiro@gmail.com>
+Date:   Wed Oct 2 12:21:35 2019 +0100
+
+    Added stale bot configuration
+
+[33mcommit dcce612ce44a9f3489402259d4e83c146df9d373[m[33m ([m[1;31morigin/josecarneiro-patch-2[m[33m)[m
+Author: José Carneiro <josemcarneiro@gmail.com>
+Date:   Tue Oct 1 23:57:50 2019 +0100
+
+    Fixed broken reference to logout service method
+
+[33mcommit b207d5ba831e546eddd54f31a00cd05372c8933d[m
+Author: José Carneiro <josemcarneiro@gmail.com>
+Date:   Tue Oct 1 23:54:32 2019 +0100
+
+    Changed logout call method to POST instead of GET
+    
+    Reasoning behind it: https://stackoverflow.com/a/14587231
+
+[33mcommit dd5b0d434e5a7a141bf19f461443643fc1e9b380[m[33m ([m[1;31morigin/josecarneiro-patch-1[m[33m)[m
+Author: José Carneiro <josemcarneiro@gmail.com>
+Date:   Tue Oct 1 19:57:14 2019 +0100
+
+    Added Lisbon to the list of campuses
+
+[33mcommit ea363e41ab683abf654673f555c4a6576d61583d[m
+Merge: 93dcbc5 9b8c624
+Author: Aleksandra Boskovic <sandraboskovic@hotmail.com>
+Date:   Fri Sep 27 16:34:00 2019 -0400
+
+    Merge pull request #77 from diurivj/master
+    
+    Fixed typo in iteration 5 - Styling your app
+
+[33mcommit 9b8c624206c1563aec433890ba3853bc28dcf08e[m
+Author: Diego Vazquez <37969385+diurivj@users.noreply.github.com>
+Date:   Fri Sep 27 15:27:29 2019 -0500
+
+    Fixed typo in iteration 5 - Styling your app
+
+[33mcommit 93dcbc55d05424d8b2cff30d96a27aacb4d497f1[m
+Merge: e42fa93 8c4a2e0
+Author: Aleksandra Boskovic <sandraboskovic@hotmail.com>
+Date:   Wed Oct 10 20:31:02 2018 -0400
+
+    Merge pull request #9 from sandrabosk/master
+    
+    update readme
+
+[33mcommit 8c4a2e07f4955ff2d8aba5028f249187b3f23bfb[m
+Author: sandrabosk <sandraboskovic@hotmail.com>
+Date:   Wed Oct 10 20:29:56 2018 -0400
+
+    update readme
+
+[33mcommit e42fa93610c948ed50d42adff2fa19dcbfb732ea[m
+Author: Victor Arza <papu.arza@gmail.com>
+Date:   Mon Aug 20 12:08:32 2018 +0200
+
+    Readme Added
